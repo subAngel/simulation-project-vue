@@ -1,5 +1,5 @@
 <template>
-	<div class="bg-slate-100 h-full">
+	<div class="h-full">
 		<div class="flex flex-col mx-auto items-center w-9/12 h-screen">
 			<div>
 				<router-link to="/" class="mx-auto btn btn-primary my-20">
@@ -59,7 +59,7 @@ const data = {
 			borderSkipped: false,
 		},
 		{
-			label: "Tasa de muertes por cáncer de pulmón (min)",
+			label: "Tasa de muertes por cáncer de pulmón (max)",
 			data: tmp_max,
 			tooltip: "Muertes",
 			borderColor: "rgba(217, 38, 169,1)",
@@ -83,7 +83,14 @@ const options = reactive({
 					return "";
 				},
 				label: function (context) {
-					return context.parsed.y + " muertes";
+					const datasetIndex = context.datasetIndex;
+					const dataIndex = context.dataIndex;
+					const value = context.parsed.y;
+
+					// Personaliza el texto del tooltip según tus necesidades
+					return `(${
+						datasetIndex == 0 ? "Minimo" : "Maximo"
+					}) Muertes estimadas: ${value}`;
 				},
 			},
 		},
