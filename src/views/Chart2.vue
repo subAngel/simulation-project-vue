@@ -3,15 +3,15 @@
 		<div class="flex flex-col mx-auto items-center w-9/12 h-screen">
 			<div>
 				<router-link to="/" class="mx-auto btn btn-primary my-20">
-					Home 1
+					Home
 				</router-link>
-				<router-link to="/chart2" class="mx-auto btn btn-primary my-20 ml-4">
-					Datos PM2.5
+				<router-link to="/chart1" class="mx-auto btn btn-primary my-20 ml-4">
+					Chart 1
 				</router-link>
 			</div>
 
-			<div class="w-11/12 h-3/4">
-				<Bar :data="data" :options="options" />
+			<div>
+				<Line :data="data" :options="options" />
 			</div>
 		</div>
 	</div>
@@ -27,8 +27,8 @@ import {
 	CategoryScale,
 	LinearScale,
 } from "chart.js";
-import { reactive, ref } from "vue";
-import { Bar, Line, Bubble } from "vue-chartjs";
+import { reactive } from "vue";
+import { Bar, Line } from "vue-chartjs";
 import datos from "../datos/datos.json";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
@@ -43,52 +43,26 @@ const data = {
 		{
 			label: "Tasa de muertes por cáncer de pulmón (min)",
 			data: tmp_min,
-			tooltip: {
-				callback: {
-					label: function (context) {
-						let label = context.dataset.label || "";
-
-						return "Muertes";
-					},
-				},
-			},
-			borderColor: "rgba(58, 191, 248,1)",
-			backgroundColor: "rgba(58, 191, 248, 0.5)",
-			borderWidth: 1,
+			borderColor: "'rgba(58, 191, 248,1)'",
+			backgroundColor: "rgba(58, 191, 248, 0.3)",
+			borderWidth: 2,
 			borderRadius: 3,
 			borderSkipped: false,
 		},
 		{
 			label: "Tasa de muertes por cáncer de pulmón (min)",
 			data: tmp_max,
-			tooltip: "Muertes",
-			borderColor: "rgba(217, 38, 169,1)",
-			backgroundColor: "rgba(217, 38, 169,0.5)",
-			borderWidth: 1,
+			borderColor: "'rgba(217, 38, 169,1)'",
+			backgroundColor: "rgba(217, 38, 169,0.3)",
+			borderWidth: 2,
 			borderRadius: 3,
 			borderSkipped: false,
 		},
 	],
-	// labels: ["Jan", "Feb", "Mar"],
-	// datasets: [{ data: [50, 20, 30] }],
 };
 
 const options = reactive({
 	responsive: true,
-
-	plugins: {
-		tooltip: {
-			callbacks: {
-				beforeLabel: function (context) {
-					return "";
-				},
-				label: function (context) {
-					return context.parsed.y + " muertes";
-				},
-			},
-		},
-	},
+	maintainAspectRatio: false,
 });
 </script>
-
-<style scoped></style>
