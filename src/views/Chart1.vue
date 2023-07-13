@@ -1,8 +1,13 @@
 <template>
 	<div class="bg-slate-100 h-full">
-		<div class="mx-auto w-9/12 h-screen">
-			<Bar :data="data" :options="options" />
-			<router-link to="/" class="btn btn-primary">Chart 1</router-link>
+		<div class="flex flex-col mx-auto items-center w-9/12 h-screen">
+			<router-link to="/" class="mx-auto btn btn-primary my-20"
+				>Home 1</router-link
+			>
+
+			<div class="w-3/4 h-3/4">
+				<Bar :data="data" :options="options" />
+			</div>
 		</div>
 	</div>
 </template>
