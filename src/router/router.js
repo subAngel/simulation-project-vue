@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Chart1 from "../views/Chart1.vue";
-import Chart2 from "../views/Chart2.vue";
+import Datatable from "../views/Datatable.vue";
 const routes = [
 	{
 		path: "/",
 		name: "Home",
 		component: Home,
 		meta: {
-			enterClass: "animate__animated animate__jackInTheBox",
+			enterClass: "animate__animated animate__bounceIn",
 			leaveClass: "",
 		},
 	},
@@ -16,15 +16,15 @@ const routes = [
 		path: "/chart1",
 		component: Chart1,
 		meta: {
-			enterClass: "animate__animated animate__jackInTheBox",
+			enterClass: "animate__animated animate__bounceIn",
 			leaveClass: "",
 		},
 	},
 	{
-		path: "/chart2",
-		component: Chart2,
+		path: "/datatable1",
+		component: Datatable,
 		meta: {
-			enterClass: "animate__animated animate__jackInTheBox",
+			enterClass: "animate__animated animate__bounceIn",
 			leaveClass: "",
 		},
 	},
