@@ -45,7 +45,7 @@
 								<tr>
 									<th>(mínimo/máximo)</th>
 									<td>
-										Concentración contrafactual mínimo o máximo
+										Concentración contrafactual mínima o máxima
 									</td>
 								</tr>
 							</tbody>

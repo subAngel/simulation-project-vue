@@ -69,6 +69,17 @@ const campos = [
 	"TMCP 2.5 (mínimo)",
 	"TMCP 2.5 (mínimo)",
 ];
-
-const isHover = ref(false);
 </script>
+
+<style scoped>
+.zoomed-row {
+	transform: scale(
+		1.2
+	); /* Ajusta el valor de escala según el efecto de zoom deseado */
+	transition: transform 0.2s ease-in-out;
+}
+.absolute {
+	position: absolute;
+	z-index: 1000;
+}
+</style>
