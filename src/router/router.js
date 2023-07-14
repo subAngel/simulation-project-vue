@@ -2,7 +2,13 @@ import { createRouter, createWebHistory } from "vue-router";
 import Home from "../views/Home.vue";
 import Chart1 from "../views/Chart1.vue";
 import Datatable from "../views/Datatable.vue";
+import NotFoundPage from "../views/NotFoundPage.vue";
+
 const routes = [
+	{
+		path: "/:catchAll(.*)",
+		component: NotFoundPage,
+	},
 	{
 		path: "/",
 		name: "Home",
