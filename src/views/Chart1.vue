@@ -1,13 +1,22 @@
 <template>
-	<div class="h-full">
+	<div class="bg-base-100 h-full">
 		<div class="flex flex-col mx-auto items-center w-9/12 h-screen">
+			<div class="my-14 flex items-center content-around w-1/5">
+				<router-link to="/" class="mx-auto btn btn-primary">
+					<i class="fa-solid fa-house"></i>
+				</router-link>
+				<router-link to="/datatable" class="mx-auto btn btn-primary">
+					Datos
+				</router-link>
+			</div>
 			<div>
-				<router-link to="/" class="mx-auto btn btn-primary my-20">
-					Home 1
-				</router-link>
-				<router-link to="/chart2" class="mx-auto btn btn-primary my-20 ml-4">
-					Datos PM2.5
-				</router-link>
+				<h2 class="text-2xl text-center text-base-content font-bold">
+					Estimación de muertes por cáncer de pulmón por la contaminación
+					ambiental en la ciudad de México
+				</h2>
+				<h3 class="text-xl text-center text-info font-bold mb-5">
+					(2004-2020)
+				</h3>
 			</div>
 
 			<div class="w-11/12 h-3/4">
@@ -52,8 +61,8 @@ const data = {
 					},
 				},
 			},
-			borderColor: "rgba(58, 191, 248,1)",
-			backgroundColor: "rgba(58, 191, 248, 0.5)",
+			borderColor: "rgba(139, 233, 253,1)",
+			backgroundColor: "rgba(139, 233, 253,0.5)",
 			borderWidth: 1,
 			borderRadius: 3,
 			borderSkipped: false,
@@ -62,8 +71,8 @@ const data = {
 			label: "Tasa de muertes por cáncer de pulmón (max)",
 			data: tmp_max,
 			tooltip: "Muertes",
-			borderColor: "rgba(217, 38, 169,1)",
-			backgroundColor: "rgba(217, 38, 169,0.5)",
+			borderColor: "rgb(255, 121, 198,1)",
+			backgroundColor: "rgb(255, 121, 198,0.5)",
 			borderWidth: 1,
 			borderRadius: 3,
 			borderSkipped: false,
@@ -75,8 +84,33 @@ const data = {
 
 const options = reactive({
 	responsive: true,
-
+	scales: {
+		x: {
+			ticks: {
+				color: "#f8f8f2",
+				font: {
+					weight: "semi-bold",
+				},
+			},
+		},
+		y: {
+			ticks: {
+				color: "#f8f8f2",
+				font: {
+					weight: "semi-bold",
+				},
+			},
+		},
+	},
 	plugins: {
+		legend: {
+			labels: {
+				color: "#f8f8f2",
+				font: {
+					size: 15,
+				},
+			},
+		},
 		tooltip: {
 			callbacks: {
 				beforeLabel: function (context) {
