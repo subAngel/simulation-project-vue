@@ -1,6 +1,6 @@
 <template>
-	<div class="overflow-x-auto mt-20">
-		<table class="table table-xs">
+	<div class="mt-20 mx-auto">
+		<table class="table table-xs z-10">
 			<!-- head -->
 			<thead>
 				<tr>

@@ -8,11 +8,15 @@
 					<i class="fa-solid fa-chart-simple"></i>
 					Grafica
 				</router-link>
-				<button class="btn btn-info ml-9" onclick="my_modal_2.showModal()">
+				<button class="btn btn-info ml-9" @click="showModal">
 					<i class="fa-solid fa-circle-info text-2xl"></i> Info
 				</button>
-				<dialog id="my_modal_2" class="modal">
-					<form method="dialog" class="modal-box w-4/5">
+				<dialog id="my_modal_2" ref="modal" class="modal">
+					<form
+						method="dialog"
+						class="modal-box w-4/5 animate__animated"
+						:class="modalClass"
+					>
 						<h3 class="font-bold text-lg">Información!</h3>
 						<table class="table">
 							<tbody>
@@ -51,9 +55,11 @@
 							</tbody>
 						</table>
 					</form>
-					<form method="dialog" class="modal-backdrop">
-						<button>close</button>
-					</form>
+					<form
+						method="dialog"
+						class="modal-backdrop"
+						@click="closeModal"
+					></form>
 				</dialog>
 			</div>
 			<Table></Table>
@@ -63,4 +69,17 @@
 
 <script setup>
 import Table from "../components/Table.vue";
+import { ref } from "vue";
+
+const modalClass = ref("");
+
+const showModal = () => {
+	modalClass.value = "animate__bounceInUp";
+	document.getElementById("my_modal_2").showModal();
+};
+
+const closeModal = () => {
+	modalClass.value = "";
+	document.getElementById("my_modal_2").close();
+};
 </script>
