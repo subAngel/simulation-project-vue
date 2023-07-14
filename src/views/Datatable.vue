@@ -1,18 +1,15 @@
 <template>
 	<div class="bg-base-100 h-full">
-		<div class="flex flex-col mx-auto items-center w-9/12 h-screen">
-			<div class="my-14 flex items-center content-around w-1/5">
-				<router-link to="/chart1" class="mx-auto btn btn-primary">
-					<i class="fa-solid fa-table"></i>Grafica
+		<div
+			class="flex flex-col mx-auto justify-center items-center w-9/12 h-screen"
+		>
+			<div class="mt-14 flex items-center content-around">
+				<router-link to="/chart1" class="btn btn-primary">
+					<i class="fa-solid fa-chart-simple"></i>
+					Grafica
 				</router-link>
 			</div>
-			<div>
-				<div class="overflow-x-auto">
-					<Table></Table>
-				</div>
-			</div>
-
-			<div class="w-11/12 h-3/4"></div>
+			<Table></Table>
 		</div>
 	</div>
 </template>

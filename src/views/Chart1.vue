@@ -6,7 +6,7 @@
 					<i class="fa-solid fa-house"></i>
 				</router-link>
 				<router-link to="/datatable1" class="mx-auto btn btn-primary">
-					Datos
+					<i class="fa-solid fa-table"></i>Datos
 				</router-link>
 			</div>
 			<div>
