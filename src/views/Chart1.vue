@@ -50,7 +50,7 @@ const data = {
 	labels: years,
 	datasets: [
 		{
-			label: "Tasa de muertes por cáncer de pulmón (min)",
+			label: "Concentración contrafactual mínima",
 			data: tmp_min,
 			tooltip: {
 				callback: {
@@ -68,7 +68,7 @@ const data = {
 			borderSkipped: false,
 		},
 		{
-			label: "Tasa de muertes por cáncer de pulmón (max)",
+			label: "Concentración contrafactual máxima",
 			data: tmp_max,
 			tooltip: "Muertes",
 			borderColor: "rgb(255, 121, 198,1)",
@@ -113,18 +113,20 @@ const options = reactive({
 		},
 		tooltip: {
 			callbacks: {
-				beforeLabel: function (context) {
-					return "";
-				},
 				label: function (context) {
 					const datasetIndex = context.datasetIndex;
-					const dataIndex = context.dataIndex;
 					const value = context.parsed.y;
 
 					// Personaliza el texto del tooltip según tus necesidades
-					return `(${
-						datasetIndex == 0 ? "Minimo" : "Maximo"
-					}) Muertes estimadas: ${value}`;
+					return `${
+						datasetIndex == 0
+							? "Concentración contrafactual mínima"
+							: "Concentración contrafactual máxima"
+					}`;
+				},
+				afterLabel: function (context) {
+					const value = context.parsed.y;
+					return "Muertes estimadas: " + value;
 				},
 			},
 		},
