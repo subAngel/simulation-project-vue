@@ -19,5 +19,12 @@
 				</router-link>
 			</div>
 		</div>
+		<div class="absolute bottom-8 right-8">
+			<Profile />
+		</div>
 	</div>
 </template>
+
+<script setup>
+import Profile from "../components/Profile.vue";
+</script>
