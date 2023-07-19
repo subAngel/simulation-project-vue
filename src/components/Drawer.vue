@@ -18,10 +18,7 @@
 					</div> -->
 					<div class="card w-96 bg-base-100 shadow-xl">
 						<figure>
-							<img
-								src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-								alt="Shoes"
-							/>
+							<img src="" alt="Shoes" />
 						</figure>
 						<div class="card-body">
 							<h2 class="card-title">Shoes!</h2>
