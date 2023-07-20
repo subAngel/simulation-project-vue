@@ -14,10 +14,12 @@
 	},
 	"dependencies": {
 		"animate.css": "^4.1.1",
+		"axios": "^1.4.0",
 		"chart.js": "^4.3.0",
 		"electron": "^25.3.0",
 		"electron-reload": "^2.0.0-alpha.1",
 		"gh-pages": "^5.0.0",
+		"octokit": "^3.0.0",
 		"vue": "^3.3.4",
 		"vue-chartjs": "^5.2.0",
 		"vue-final-modal": "^4.4.4",
